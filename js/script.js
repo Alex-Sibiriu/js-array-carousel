@@ -2,7 +2,7 @@ const imgSlider = document.querySelector('.img-slider');
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 
-btnPrev.classList.add('hide');
+// btnPrev.classList.add('hide');
 
 let sliderCounter = 0;
 
@@ -26,22 +26,30 @@ btnPrev.addEventListener('click', function() {
   sliderItems[sliderCounter].classList.add('hide');
   sliderCounter--;
 
+  if (sliderCounter < 0) {
+    sliderCounter = sliderItems.length -1;
+  }
+
   btnNext.classList.remove('hide')
   sliderItems[sliderCounter].classList.remove('hide');
 
-  if (sliderCounter === 0 ) {
-    btnPrev.classList.add('hide');
-  }
+  // if (sliderCounter === 0 ) {
+  //   btnPrev.classList.add('hide');
+  // }
 });
 
 btnNext.addEventListener('click', function() {
   sliderItems[sliderCounter].classList.add('hide');
   sliderCounter++;
+
+  if (sliderCounter >= sliderItems.length) {
+    sliderCounter = 0;
+  }
   
   btnPrev.classList.remove('hide')
   sliderItems[sliderCounter].classList.remove('hide');
 
-  if (sliderCounter === sliderItems.length -1) {
-    btnNext.classList.add('hide');
-  }
+  // if (sliderCounter === sliderItems.length -1) {
+  //   btnNext.classList.add('hide');
+  // }
 });
