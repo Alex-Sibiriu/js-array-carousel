@@ -27,13 +27,18 @@ img {
   justify-content: center;
 }
 
-/* SLIDER */
-.img-slider {
+.carousel {
   width: 60%;
   height: 50%;
   margin: auto;
-  background-color: aliceblue;
   position: relative;
+}
+
+/* SLIDER */
+.img-slider {
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
 }
 
 .slider-btn {
@@ -48,6 +53,12 @@ img {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  transition: all .25s;
+}
+
+.slider-btn:hover {
+  background-color: white;
+  color: rgba(128, 128, 128, 0.5);
 }
 
 .slider-btn.btn-prev {
